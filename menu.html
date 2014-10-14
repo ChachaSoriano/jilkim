@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang=en>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=.45, maximum-scale=.45, user-scalable=no">
+	<meta charset=utf-8>
+	<title>GameVal</title>
+
+	<link rel="stylesheet" href="css/matchgameI.css" />
+	<link rel="stylesheet" type="text/css" href="css/jquery.mobile-1.2.0.min.css" />
+	
+
+
+<script type="text/javascript">
+
+
+window.onload = function() {
+            var audioEl = document.getElementById("audioTag");
+         
+            audioEl.load();
+            audioEl.play();
+			audioEL.volume = 0.1;
+        };
+
+
+		
+		if(!(localStorage.getItem("soundState"))){
+localStorage.setItem("soundState", "");
+}
+
+		function loadSound(){
+if(localStorage.getItem("soundState") == "true"){
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+
+}else if(localStorage.getItem("soundState") == ""){
+document.getElementById('audiobg').muted =  localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+
+}
+}
+
+function sound(){
+if(localStorage.getItem("soundState") == ""){
+mute();
+}else if(localStorage.getItem("soundState") == "true"){
+unmute();
+}
+
+}
+function mute(){
+localStorage.setItem("soundState", "true");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/off.png"
+}
+function unmute(){
+localStorage.setItem("soundState", "");
+document.getElementById('audiobg').muted = localStorage.getItem("soundState");
+document.getElementById("test").src = "images/on.png"
+var audio = document.getElementById("audiobg");
+audio.play();
+}
+		
+		
+		
+</script>
+	<style type="text/css">
+	.auto-style1 {
+		margin-left: 0px;
+		margin-top: 0px;
+	}
+	.auto-style2 {
+		margin-right: 36px;
+	}
+	.auto-style3 {
+		margin-top: 0px;
+	}
+	</style>
+	</head>
+<body onload = "loadSound();" background="images/cover.png">
+	
+		
+	
+	<div data-role="page" data-theme="a">
+
+		
+	<div data-role="content" class="auto-style2">
+		
+		<span lang="en-ph">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><br><img id="test" align="right" src="" onclick="sound()" height="50" width="50"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+		
+		<a href="game.html">
+		<img alt="" src="images/match.png" style="float: left"></a><br><br><br>
+		<br><br><br>
+		<a href="game2.html">
+		<img alt="" src="images/game2.png" style="float: left" height="100" width="350"></a></a><br><br><br>
+		<br><br><br>
+		<a href="game3.html">
+		<img alt="" src="images/me.png" style="float: left" height="100" width="350"></a><div>
+		
+		<div class="speaker"><br></div>
+		
+		
+		
+		
+		<audio loop="loop" id="audiobg">
+	<source src="audio/music.wav"></source>
+	Your browser isn't invited for super fun audio time.
+</audio>
+</div>
+		
+		
+		
+		
+		</div>
+
+	</div>
+	
+</body>
+</html>
